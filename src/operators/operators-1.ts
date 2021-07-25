@@ -1,5 +1,5 @@
 import { asyncScheduler, from, fromEvent, interval, of } from 'rxjs'
-import { map, pluck, reduce, take, tap, throttleTime } from 'rxjs/operators'
+import { delay, map, pluck, reduce, switchMap, take, tap, throttleTime } from 'rxjs/operators'
 import { makeLogger } from 'ts-loader/dist/logger'
 
 export function doMap() {
@@ -10,7 +10,8 @@ export function doMap() {
 
   const $keydown = fromEvent(document, 'keydown')
   const $keycode = $keydown.pipe(
-    map((event: KeyboardEvent) => event.key)
+    map((event: KeyboardEvent) => event.key),
+    switchMap(x => x ? of(true) : of(false).pipe(delay(300)))
   )
 
   const $keycodeWithPluck = $keydown.pipe(

@@ -1,0 +1,98 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.progress {
+    position: fixed;
+    top: 0;
+    height: 3px;
+    background: #ff7300;
+}
+
+.container {
+    text-align: center;
+}
+
+.page {
+    max-width: 300px;
+}
+
+h1 {
+    color: #ff7300;
+}
+
+#start-poll {
+    background: forestgreen;
+}
+
+#stop-poll {
+    background: #ff491d;
+}
+
+button {
+    outline: none;
+}
+
+#loading-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: #451771;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-out;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+#loading-overlay {
+    animation-name: fadeOutUp;
+}
+#loading-overlay.open {
+    animation-name: fadeInDown;
+}
+
+#ball {
+    height: 50px;
+    width: 50px;
+    background: red;
+    margin: 0 auto;
+    border-radius: 50%;
+}

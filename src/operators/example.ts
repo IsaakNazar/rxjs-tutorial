@@ -1,5 +1,4 @@
 import { from, fromEvent, interval, of, range, timer } from 'rxjs'
-import { filter, mapTo, scan, take, takeWhile, tap } from 'rxjs/operators'
 
 export function doFromEvent() {
   const observer = {
@@ -45,5 +44,7 @@ export function doFrom() {
 export function doInterval() {
   const interval$ = interval(3000)
   const timer$ = timer( 3500, 1000)
-  interval$.subscribe(console.log)
+  timer$.subscribe(console.log)
 }
+
+

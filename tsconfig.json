@@ -1,10 +1,11 @@
 {
-  "compilerOptions": {
+  "compileOptions": {
     "outDir": "./dist/",
     "noImplicitAny": false,
     "module": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
+    "strictDomEventTypes": false,
     "target": "es6",
     "typeRoots": [
       "node_modules/@types"

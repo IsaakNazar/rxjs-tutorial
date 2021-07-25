@@ -11,10 +11,16 @@
   },
   "main": "code.ts",
   "devDependencies": {
+    "@types/jasmine": "^3.6.9",
+    "jasmine": "^3.7.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.3.2",
+    "ts-node": "^9.1.1",
     "webpack-cli": "^4.5.0"
   },
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "jasmine-ts --config=jasmine.json"
   },
   "author": "",
   "license": "ISC",

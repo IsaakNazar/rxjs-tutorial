@@ -1,8 +1,13 @@
 import { Observable } from 'rxjs'
 import { scrollEvt } from './operators/operators-1'
-import { throttleTimeRx } from './operators/throttleTimeRx'
-import { debounceTimeRx } from './operators/debounceTimeRx'
-import { sampleTimeRx } from './operators/sampleTimeRx'
+import { loadStateSubjects } from './operators/subjects/subjects'
+import { shareReplayRx } from './operators/subjects/share-replay'
+import { asyncSubj } from './operators/subjects/asyncSubj'
+import { asyncSchdrl } from './operators/schedulers/asyncSchd'
+import { asapSchdlr } from './operators/schedulers/asapSchdlr'
+import { animationSchdlr } from './operators/schedulers/animationSchdlr'
+import { queueSchdlr } from './operators/schedulers/queueSchdlr'
+import { marbleTesting } from './marble-testing.spec'
 
 function observe() {
   const observer = {
@@ -42,7 +47,5 @@ function observe() {
 }
 scrollEvt()
 
-
-sampleTimeRx()
-
-
+queueSchdlr()
+marbleTesting()
